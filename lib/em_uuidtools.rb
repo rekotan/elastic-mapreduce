@@ -29,10 +29,10 @@ require 'thread'
 require 'digest/sha1'
 require 'digest/md5'
 
-require 'uuidtools/version'
+require 'em_uuidtools/version'
 
 # Backwards compatibility with old method of versioning.
-UUID_TOOLS_VERSION = UUID::UUID_TOOLS_VERSION::STRING
+EM_UUID_TOOLS_VERSION = EM_UUID::EM_UUID_TOOLS_VERSION::STRING
 
 #  Because it's impossible to hype a UUID generator on its genuine merits,
 #  I give you... Really bad ASCII art in the comments:
@@ -105,7 +105,7 @@ UUID_TOOLS_VERSION = UUID::UUID_TOOLS_VERSION::STRING
 #  => #<UUID:0x2adfdc UUID:64a5189c-25b3-11da-a97b-00c04fd430c8>
 #  UUID.random_create
 #  => #<UUID:0x19013a UUID:984265dc-4200-4f02-ae70-fe4f48964159>
-class UUID
+class EM_UUID
   @@mac_address = nil
   @@last_timestamp = nil
   @@last_node_id = nil
@@ -400,7 +400,7 @@ class UUID
   
   # Returns a representation of the object's state
   def inspect
-    return "#<UUID:0x#{self.object_id.to_s(16)} UUID:#{self.to_s}>"
+    return "#<EM_UUID:0x#{self.object_id.to_s(16)} EM_UUID:#{self.to_s}>"
   end
   
   # Returns the hex digest of the UUID object.
@@ -649,7 +649,7 @@ class UUID
   end
 end
 
-UUID_DNS_NAMESPACE = UUID.parse("6ba7b810-9dad-11d1-80b4-00c04fd430c8")
-UUID_URL_NAMESPACE = UUID.parse("6ba7b811-9dad-11d1-80b4-00c04fd430c8")
-UUID_OID_NAMESPACE = UUID.parse("6ba7b812-9dad-11d1-80b4-00c04fd430c8")
-UUID_X500_NAMESPACE = UUID.parse("6ba7b814-9dad-11d1-80b4-00c04fd430c8")
+EM_UUID_DNS_NAMESPACE = EM_UUID.parse("6ba7b810-9dad-11d1-80b4-00c04fd430c8")
+EM_UUID_URL_NAMESPACE = EM_UUID.parse("6ba7b811-9dad-11d1-80b4-00c04fd430c8")
+EM_UUID_OID_NAMESPACE = EM_UUID.parse("6ba7b812-9dad-11d1-80b4-00c04fd430c8")
+EM_UUID_X500_NAMESPACE = EM_UUID.parse("6ba7b814-9dad-11d1-80b4-00c04fd430c8")

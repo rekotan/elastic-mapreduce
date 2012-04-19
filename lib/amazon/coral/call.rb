@@ -1,7 +1,7 @@
 #
 # Copyright 2008-2010 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
 
-require 'uuidtools'
+require 'em_uuidtools'
 
 module Amazon
   module Coral
@@ -40,7 +40,7 @@ module Amazon
       # Invoke the remote service and return the result.
       def call(input = {})
         begin
-          @request_id = UUID.random_create if @request_id.nil?
+          @request_id = EM_UUID.random_create if @request_id.nil?
 
           return @dispatcher.dispatch(self, input)
         rescue Timeout::Error => timeout

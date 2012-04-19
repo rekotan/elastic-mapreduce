@@ -21,8 +21,8 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
 
-class UUID
-  module UUID_TOOLS_VERSION #:nodoc:
+class EM_UUID
+  module EM_UUID_TOOLS_VERSION #:nodoc:
     MAJOR = 1
     MINOR = 0
     TINY  = 3
